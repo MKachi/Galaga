@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{385d4baf-e3ce-4021-a7a7-9285098ea115}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Math">
+      <UniqueIdentifier>{6bfd23d0-045c-490f-a0cc-1f03697a3e07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Base">
+      <UniqueIdentifier>{418a5f64-ff88-4ec5-b6cd-239a9dc4d5bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Cache">
+      <UniqueIdentifier>{af01f097-c1e8-461c-984d-7b8a292bb049}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="framework\Node.cpp">
+      <Filter>Framework\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\Scene.cpp">
+      <Filter>Framework\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\Vector2.cpp">
+      <Filter>Framework\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\Color.cpp">
+      <Filter>Framework\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\Color32.cpp">
+      <Filter>Framework\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\Geometry.cpp">
+      <Filter>Framework\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\Sprite.cpp">
+      <Filter>Framework\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\Cache.cpp">
+      <Filter>Framework\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\Texture.cpp">
+      <Filter>Framework\Cache</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework\Define.h">
+      <Filter>Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Rule.h">
+      <Filter>Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Type.h">
+      <Filter>Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Node.h">
+      <Filter>Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Scene.h">
+      <Filter>Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Color32.h">
+      <Filter>Framework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Geometry.h">
+      <Filter>Framework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\MathFunc.h">
+      <Filter>Framework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Vector2.h">
+      <Filter>Framework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Color.h">
+      <Filter>Framework\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Sprite.h">
+      <Filter>Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Cache.h">
+      <Filter>Framework\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Texture.h">
+      <Filter>Framework\Cache</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
