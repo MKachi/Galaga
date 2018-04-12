@@ -7,9 +7,11 @@
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
 #endif
+
 #include "Config.h"
 #include "assets/Resources.h"
 #include "framework/SceneManager.h"
+#include "framework/AudioListener.h"
 
 SceneManager* manager = nullptr;
 
@@ -58,12 +60,21 @@ int main(int argc, char** argv)
 	{
 		return -1;
 	}
+
+	AudioListener listener;
+	if (!listener.init())
+	{
+		return -1;
+	}
     init();
     
     glutDisplayFunc(render);
     glutReshapeFunc(reshape);
     update(1);
     glutMainLoop();
+
+	SceneManager::destroy();
+	CacheManager::destroy();
     
     return 0;
 }

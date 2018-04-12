@@ -6,7 +6,12 @@ CacheManager::CacheManager()
 {	}
 
 CacheManager::~CacheManager()
-{	}
+{	
+	for (auto cache : _caches)
+	{
+		SAFE_DELETE(cache.second);
+	}
+}
 
 bool CacheManager::isHave(const string& key)
 {

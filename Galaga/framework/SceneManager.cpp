@@ -6,7 +6,14 @@ SceneManager::SceneManager()
 {   }
 
 SceneManager::~SceneManager()
-{   }
+{   
+	while (!_scenes.empty())
+	{
+		Scene* top = _scenes.top();
+		_scenes.pop();
+		SAFE_DELETE(top);
+	}
+}
 
 SceneManager* SceneManager::getInstance()
 {
