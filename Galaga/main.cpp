@@ -22,10 +22,9 @@ void init()
     glOrtho(0.0f, SCREEN_WIDTH, 0.0f, SCREEN_HEIGHT, -1.0f, 1.0f);
 }
 
-void update(int value)
+void update()
 {
 	manager->topScene()->update();
-    glutTimerFunc(1000 / 60, update, 1);
 }
 
 void render()
@@ -33,6 +32,7 @@ void render()
     glClear(GL_COLOR_BUFFER_BIT);
 	manager->topScene()->render();
     glFlush();
+	glutSwapBuffers();
 }
 
 void reshape(int w, int h)
@@ -47,7 +47,7 @@ int main(int argc, char** argv)
 {
 #if defined(_WINDOWS) & defined(_DEBUG)
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-//	_CrtSetBreakAlloc(29784);
+//	_CrtSetBreakAlloc(241);
 #endif
 
     glutInit(&argc, argv);
@@ -70,8 +70,8 @@ int main(int argc, char** argv)
     
     glutDisplayFunc(render);
     glutReshapeFunc(reshape);
-    update(1);
-    glutMainLoop();
+	glutIdleFunc(update);
+	glutMainLoop();
 
 	SceneManager::destroy();
 	CacheManager::destroy();
