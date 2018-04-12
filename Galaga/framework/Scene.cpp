@@ -7,6 +7,7 @@
 
 Scene::Scene()
 {
+    _objects.reserve(10);
 }
 
 Scene::~Scene()
@@ -19,12 +20,13 @@ Scene::~Scene()
 
 void Scene::addObject(Node* object)
 {
+    _objects.push_back(object);
 }
 
 void Scene::render()
 {
+    glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	glMatrixMode(GL_MODELVIEW);
 
 	for (auto& object : _objects)
 	{

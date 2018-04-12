@@ -41,7 +41,6 @@ Size Size::operator*(uint value) const
 
 Size Size::operator/(uint value) const
 {
-	ASSERT(value <= 0, "Division by 0");
 	return Size(width / value, height / value);
 }
 

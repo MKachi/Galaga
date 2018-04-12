@@ -1,9 +1,10 @@
 #include "Texture.h"
 
 Texture::Texture(const string& key)
-	: _key(key)
-	, _buffer(0)
-{	}
+    : _buffer(0)
+{
+    _key = key;
+}
 
 Texture::~Texture()
 {

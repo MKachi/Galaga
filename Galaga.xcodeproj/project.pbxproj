@@ -119,6 +119,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		01B5E853207F64DF0004C8AB /* assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
 		01DB9131207F59940097D32A = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +146,7 @@
 		01DB913C207F59940097D32A /* Galaga */ = {
 			isa = PBXGroup;
 			children = (
+				01B5E853207F64DF0004C8AB /* assets */,
 				0136A969207F5AE9001D57AE /* Config.h */,
 				01934559207F5A1200E42522 /* framework */,
 				01934557207F5A0A00E42522 /* main.cpp */,

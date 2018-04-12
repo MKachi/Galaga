@@ -79,4 +79,5 @@ Node* Node::getChildByTag(const string& tag)
 			return child;
 		}
 	}
+    return nullptr;
 }
