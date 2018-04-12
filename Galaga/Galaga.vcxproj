@@ -167,6 +167,8 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="assets\GameScene.cpp" />
+    <ClCompile Include="assets\Resources.cpp" />
     <ClCompile Include="framework\Cache.cpp" />
     <ClCompile Include="framework\CacheManager.cpp" />
     <ClCompile Include="framework\Color.cpp" />
@@ -174,12 +176,15 @@
     <ClCompile Include="framework\Geometry.cpp" />
     <ClCompile Include="framework\Node.cpp" />
     <ClCompile Include="framework\Scene.cpp" />
+    <ClCompile Include="framework\SceneManager.cpp" />
     <ClCompile Include="framework\Sprite.cpp" />
     <ClCompile Include="framework\Texture.cpp" />
     <ClCompile Include="framework\Vector2.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="assets\GameScene.h" />
+    <ClInclude Include="assets\Resources.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="framework\Cache.h" />
     <ClInclude Include="framework\CacheManager.h" />
@@ -191,6 +196,7 @@
     <ClInclude Include="framework\Node.h" />
     <ClInclude Include="framework\Rule.h" />
     <ClInclude Include="framework\Scene.h" />
+    <ClInclude Include="framework\SceneManager.h" />
     <ClInclude Include="framework\Sprite.h" />
     <ClInclude Include="framework\Texture.h" />
     <ClInclude Include="framework\Type.h" />

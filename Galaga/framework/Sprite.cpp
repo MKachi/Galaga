@@ -1,11 +1,10 @@
 #include "Sprite.h"
+#include "CacheManager.h"
 #include <algorithm>
 
-Sprite::Sprite(Texture* texture)
-	: _texture(texture)
-{	
-	_texture->retain();
-}
+Sprite::Sprite()
+	: _texture(nullptr)
+{	}
 
 Sprite::~Sprite()
 {
@@ -15,6 +14,28 @@ Sprite::~Sprite()
 	{
 		SAFE_DELETE(child);
 	}
+}
+
+Sprite* Sprite::create(const string& textureKey)
+{
+	Sprite* result = new (std::nothrow) Sprite();
+	if (result != nullptr && result->init(textureKey))
+	{
+		return result;
+	}
+	return nullptr;
+}
+
+bool Sprite::init(const string& textureKey)
+{
+	if (!CacheManager::getInstance()->isHave(textureKey))
+	{
+		return false;
+	}
+
+	_texture = CacheManager::getInstance()->get(textureKey);
+
+	return true;
 }
 
 void Sprite::render()

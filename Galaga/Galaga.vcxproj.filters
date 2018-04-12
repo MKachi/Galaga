@@ -16,6 +16,15 @@
     <Filter Include="Assets">
       <UniqueIdentifier>{0e31cc23-f6f6-4794-b2b4-c8f85f35d3e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assets\Scene">
+      <UniqueIdentifier>{f9437476-d978-4aec-9bfe-e912277a5355}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures">
+      <UniqueIdentifier>{ad824e8a-124d-4843-9212-68734ae19a3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Classes">
+      <UniqueIdentifier>{5e7e0cf9-e80b-4845-ad66-25ab5f1972df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -48,6 +57,15 @@
     </ClCompile>
     <ClCompile Include="framework\CacheManager.cpp">
       <Filter>Framework\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\SceneManager.cpp">
+      <Filter>Framework\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="assets\Resources.cpp">
+      <Filter>Assets\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="assets\GameScene.cpp">
+      <Filter>Assets\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -94,5 +112,14 @@
       <Filter>Framework\Cache</Filter>
     </ClInclude>
     <ClInclude Include="Config.h" />
+    <ClInclude Include="framework\SceneManager.h">
+      <Filter>Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="assets\Resources.h">
+      <Filter>Assets\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="assets\GameScene.h">
+      <Filter>Assets\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

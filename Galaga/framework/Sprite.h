@@ -10,9 +10,13 @@ class Sprite
 private:
 	Texture* _texture;
 
+	bool init(const string& textureKey);
+
 public:
-	Sprite(Texture* texture);
+	Sprite();
 	virtual ~Sprite();
+
+	static Sprite* create(const string& textureKey);
 
 	void render() override;
 
