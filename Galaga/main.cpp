@@ -4,6 +4,10 @@
 #include "framework/SceneManager.h"
 #include "framework/AudioListener.h"
 
+#if _WINDOWS
+#include <crtdbg.h>
+#endif
+
 SceneManager* manager = nullptr;
 
 void init()
@@ -41,6 +45,11 @@ void reshape(int w, int h)
 
 int main(int argc, char** argv)
 {
+#if defined(_WINDOWS) & defined(_DEBUG)
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+//	_CrtSetBreakAlloc(29784);
+#endif
+
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_RGB);
     glutInitWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT);
