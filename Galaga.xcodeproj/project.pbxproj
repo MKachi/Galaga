@@ -20,6 +20,7 @@
 		0193457B207F5A1F00E42522 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01934571207F5A1F00E42522 /* Color.cpp */; };
 		0193457F207F5A5A00E42522 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0193457D207F5A4F00E42522 /* OpenGL.framework */; };
 		01934580207F5A5F00E42522 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0193457E207F5A5500E42522 /* GLUT.framework */; };
+		01B5E855207F678B0004C8AB /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01B5E854207F678B0004C8AB /* SceneManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +64,8 @@
 		01934571207F5A1F00E42522 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
 		0193457D207F5A4F00E42522 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		0193457E207F5A5500E42522 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		01B5E854207F678B0004C8AB /* SceneManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SceneManager.cpp; sourceTree = "<group>"; };
+		01B5E856207F67BE0004C8AB /* SceneManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneManager.h; sourceTree = "<group>"; };
 		01DB913A207F59940097D32A /* Galaga */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Galaga; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -106,6 +109,8 @@
 				0193456F207F5A1F00E42522 /* Type.h */,
 				0193455C207F5A1E00E42522 /* Vector2.cpp */,
 				01934560207F5A1E00E42522 /* Vector2.h */,
+				01B5E854207F678B0004C8AB /* SceneManager.cpp */,
+				01B5E856207F67BE0004C8AB /* SceneManager.h */,
 			);
 			path = framework;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 			files = (
 				01934574207F5A1F00E42522 /* CacheManager.cpp in Sources */,
 				01934577207F5A1F00E42522 /* Node.cpp in Sources */,
+				01B5E855207F678B0004C8AB /* SceneManager.cpp in Sources */,
 				01934572207F5A1F00E42522 /* Sprite.cpp in Sources */,
 				01934579207F5A1F00E42522 /* Texture.cpp in Sources */,
 				01934576207F5A1F00E42522 /* Color32.cpp in Sources */,
