@@ -13,11 +13,13 @@ class Texture
 protected:
 	GLuint _buffer;
 
-	void glListBegin();
-	void glListEnd();
-
 public:
 	Texture(const string& key);
 	virtual ~Texture();
+
+	void glListBegin();
+	void glListEnd();
+
+	void bind();
 
 };

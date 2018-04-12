@@ -25,3 +25,8 @@ void Texture::glListEnd()
 {
 	glEndList();
 }
+
+void Texture::bind()
+{
+	glCallList(_buffer);
+}
