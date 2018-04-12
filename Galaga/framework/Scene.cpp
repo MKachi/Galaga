@@ -4,6 +4,7 @@
 #else
 #include <GLUT/glut.h>
 #endif
+#include <algorithm>
 
 Scene::Scene()
 {
@@ -27,6 +28,12 @@ void Scene::render()
 {
     glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
+
+	std::sort(_objects.begin(), _objects.end()
+		, [](Node* a, Node* b)-> bool
+	{
+		return a->getDepth() < b->getDepth();
+	});
 
 	for (auto& object : _objects)
 	{

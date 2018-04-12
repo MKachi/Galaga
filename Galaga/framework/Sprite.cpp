@@ -1,4 +1,5 @@
 #include "Sprite.h"
+#include <algorithm>
 
 Sprite::Sprite(Texture* texture)
 	: _texture(texture)
@@ -22,6 +23,13 @@ void Sprite::render()
 	glRotatef(_rotate, 0.0f, 0.0f, 1.0f);
 	glScalef(_scale.x, _scale.y, 1.0f);
 	glPushMatrix();
+
+	std::sort(_children.begin(), _children.end()
+		, [](Node* a, Node* b)-> bool
+	{
+		return a->getDepth() < b->getDepth();
+	});
+
 	for (auto& child : _children)
 	{
 		child->render();
