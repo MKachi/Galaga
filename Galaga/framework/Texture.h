@@ -20,6 +20,4 @@ public:
 	Texture(const string& key);
 	virtual ~Texture();
 
-	virtual bool init() = 0;
-
 };
