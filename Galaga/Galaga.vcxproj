@@ -168,6 +168,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="framework\Cache.cpp" />
+    <ClCompile Include="framework\CacheManager.cpp" />
     <ClCompile Include="framework\Color.cpp" />
     <ClCompile Include="framework\Color32.cpp" />
     <ClCompile Include="framework\Geometry.cpp" />
@@ -179,7 +180,9 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Config.h" />
     <ClInclude Include="framework\Cache.h" />
+    <ClInclude Include="framework\CacheManager.h" />
     <ClInclude Include="framework\Color.h" />
     <ClInclude Include="framework\Color32.h" />
     <ClInclude Include="framework\Define.h" />

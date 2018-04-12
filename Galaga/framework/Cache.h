@@ -4,8 +4,9 @@
 
 class Cache
 {
-private:
-	int _ref;
+protected:
+	string	_key;
+	int		_ref;
 
 public:
 	Cache();
@@ -13,5 +14,7 @@ public:
 
 	void retain();
 	void release();
+
+	string getKey() { return _key; }
 
 };

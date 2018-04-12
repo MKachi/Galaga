@@ -21,9 +21,10 @@ void Sprite::render()
 	glTranslatef(_position.x, _position.y, 0.0f);
 	glRotatef(_rotate, 0.0f, 0.0f, 1.0f);
 	glScalef(_scale.x, _scale.y, 1.0f);
-
+	glPushMatrix();
 	for (auto& child : _children)
 	{
 		child->render();
 	}
+	glPopMatrix();
 }

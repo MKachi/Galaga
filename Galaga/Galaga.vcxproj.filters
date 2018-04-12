@@ -13,6 +13,9 @@
     <Filter Include="Framework\Cache">
       <UniqueIdentifier>{af01f097-c1e8-461c-984d-7b8a292bb049}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{0e31cc23-f6f6-4794-b2b4-c8f85f35d3e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -41,6 +44,9 @@
       <Filter>Framework\Cache</Filter>
     </ClCompile>
     <ClCompile Include="framework\Texture.cpp">
+      <Filter>Framework\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\CacheManager.cpp">
       <Filter>Framework\Cache</Filter>
     </ClCompile>
   </ItemGroup>
@@ -84,5 +90,9 @@
     <ClInclude Include="framework\Texture.h">
       <Filter>Framework\Cache</Filter>
     </ClInclude>
+    <ClInclude Include="framework\CacheManager.h">
+      <Filter>Framework\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h" />
   </ItemGroup>
 </Project>
