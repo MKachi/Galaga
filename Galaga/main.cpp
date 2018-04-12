@@ -9,8 +9,13 @@
 #include "Config.h"
 #include "framework/SceneManager.h"
 
+SceneManager* manager = nullptr;
+
 void init()
 {
+	manager = SceneManager::getInstance();
+	manager->pushScene(new START_SCENE());
+
     glEnable(GL_DOUBLEBUFFER);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glMatrixMode(GL_PROJECTION);
@@ -20,14 +25,14 @@ void init()
 
 void update(int value)
 {
-    // update
+	manager->topScene()->update();
     glutTimerFunc(1000 / 60, update, 1);
 }
 
 void render()
 {
     glClear(GL_COLOR_BUFFER_BIT);
-    // render
+	manager->topScene()->render();
     glFlush();
 }
 

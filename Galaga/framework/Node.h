@@ -44,6 +44,7 @@ public:
 	void setParent(Node* parent);
 	Node* getParent() { return _parent; }
 
+	void addChild(Node* child);
 	void removeChild(Node* child);
 	void removeChildByTag(const string& tag);
 	Node* getChildByTag(const string& tag);

@@ -52,6 +52,11 @@ void Node::setParent(Node* parent)
 	_parent = parent;
 }
 
+void Node::addChild(Node* child)
+{
+	_children.push_back(child);
+}
+
 void Node::removeChild(Node* child)
 {
 	_children.erase(std::find(_children.begin(), _children.end(), child));
