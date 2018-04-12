@@ -1,10 +1,11 @@
 #if _WINDOWS
-#include <GL/glut.h>
+#include <glut.h>
+#include <gl/GL.h>
 #include <GL/GLU.h>
 #else
+#include <GLUT/GLUT.h>
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
-#include <GLUT/GLUT.h>
 #endif
 #include "Config.h"
 #include "assets/Resources.h"

@@ -19,9 +19,6 @@
     <Filter Include="Assets\Scene">
       <UniqueIdentifier>{f9437476-d978-4aec-9bfe-e912277a5355}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Assets\Textures">
-      <UniqueIdentifier>{ad824e8a-124d-4843-9212-68734ae19a3a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Assets\Classes">
       <UniqueIdentifier>{5e7e0cf9-e80b-4845-ad66-25ab5f1972df}</UniqueIdentifier>
     </Filter>

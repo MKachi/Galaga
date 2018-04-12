@@ -1,7 +1,7 @@
 #pragma once
 
 #if _WINDOWS
-#include <GL/glut.h>
+#include <glut.h>
 #else
 #include <GLUT/glut.h>
 #endif
