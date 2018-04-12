@@ -2,7 +2,7 @@
 #include "../framework/Texture.h"
 
 Resources::Resources()
-	: _manager(nullptr)
+	: _manager(CacheManager::getInstance())
 {	}
 
 Resources::~Resources()

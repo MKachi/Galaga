@@ -10,6 +10,10 @@ CacheManager::~CacheManager()
 
 bool CacheManager::isHave(const string& key)
 {
+	if (_caches.empty())
+	{
+		return false;
+	}
 	return _caches.find(key) != _caches.cend();
 }
 

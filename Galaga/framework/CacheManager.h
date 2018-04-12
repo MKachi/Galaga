@@ -20,7 +20,7 @@ public:
 		{
 			return nullptr;
 		}
-		return _caches[key];
+		return static_cast<T>(_caches[key]);
 	}
 
 	bool isHave(const string& key);

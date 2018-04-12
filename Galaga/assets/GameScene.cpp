@@ -2,5 +2,11 @@
 
 void GameScene::init()
 {
-	sprite = new Sprite();
+	sprite = Sprite::create("Player");
+	this->addObject(sprite);
+}
+
+void GameScene::update()
+{
+
 }
