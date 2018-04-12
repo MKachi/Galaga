@@ -7,6 +7,7 @@
 #include <GLUT/GLUT.h>
 #endif
 #include "Config.h"
+#include "framework/SceneManager.h"
 
 void init()
 {
