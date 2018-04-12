@@ -22,6 +22,9 @@
     <Filter Include="Assets\Classes">
       <UniqueIdentifier>{5e7e0cf9-e80b-4845-ad66-25ab5f1972df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework\Audio">
+      <UniqueIdentifier>{57018934-2809-4690-b0a3-64e958669a83}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -63,6 +66,15 @@
     </ClCompile>
     <ClCompile Include="assets\GameScene.cpp">
       <Filter>Assets\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\AudioClip.cpp">
+      <Filter>Framework\Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\AudioListener.cpp">
+      <Filter>Framework\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\AudioSource.cpp">
+      <Filter>Framework\Audio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +129,18 @@
     </ClInclude>
     <ClInclude Include="assets\GameScene.h">
       <Filter>Assets\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\AudioClip.h">
+      <Filter>Framework\Cache</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\AudioListener.h">
+      <Filter>Framework\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\AudioSource.h">
+      <Filter>Framework\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\OpenGL.h">
+      <Filter>Framework\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

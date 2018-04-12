@@ -1,9 +1,5 @@
 #include "Scene.h"
-#if _WINDOWS
-#include <GL/glut.h>
-#else
-#include <GLUT/glut.h>
-#endif
+#include "OpenGL.h"
 #include <algorithm>
 
 Scene::Scene()

@@ -1,13 +1,4 @@
-#if _WINDOWS
-#include <glut.h>
-#include <gl/GL.h>
-#include <GL/GLU.h>
-#else
-#include <GLUT/GLUT.h>
-#include <OpenGL/gl.h>
-#include <OpenGL/glu.h>
-#endif
-
+#include "framework/OpenGL.h"
 #include "Config.h"
 #include "assets/Resources.h"
 #include "framework/SceneManager.h"

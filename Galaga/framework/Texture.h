@@ -1,10 +1,6 @@
 #pragma once
 
-#if _WINDOWS
-#include <glut.h>
-#else
-#include <GLUT/glut.h>
-#endif
+#include "OpenGL.h"
 #include "Cache.h"
 
 class Texture
