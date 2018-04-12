@@ -13,6 +13,16 @@ public:
 	~CacheManager();
 
 	void add(Cache* cache);
+	template <typename T>
+	T get(const string& key)
+	{
+		if (!isHave(key))
+		{
+			return nullptr;
+		}
+		return _caches[key];
+	}
+
 	bool isHave(const string& key);
 	void remove(const string& key);
 

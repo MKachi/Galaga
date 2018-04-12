@@ -28,12 +28,11 @@ Sprite* Sprite::create(const string& textureKey)
 
 bool Sprite::init(const string& textureKey)
 {
-	if (!CacheManager::getInstance()->isHave(textureKey))
+	_texture = CacheManager::getInstance()->get<Texture*>(textureKey);
+	if (_texture == nullptr)
 	{
 		return false;
 	}
-
-	_texture = CacheManager::getInstance()->get(textureKey);
 
 	return true;
 }
