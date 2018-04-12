@@ -24,6 +24,8 @@ void Sprite::render()
 	glScalef(_scale.x, _scale.y, 1.0f);
 	glPushMatrix();
 
+	_texture->bind();
+
 	std::sort(_children.begin(), _children.end()
 		, [](Node* a, Node* b)-> bool
 	{

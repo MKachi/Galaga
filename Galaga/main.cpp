@@ -7,6 +7,7 @@
 #include <GLUT/GLUT.h>
 #endif
 #include "Config.h"
+#include "assets/Resources.h"
 #include "framework/SceneManager.h"
 
 SceneManager* manager = nullptr;
@@ -50,6 +51,12 @@ int main(int argc, char** argv)
     glutInitDisplayMode(GLUT_RGB);
     glutInitWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT);
     glutCreateWindow(TITLE_NAME);
+
+	Resources resources;
+	if (!resources.load())
+	{
+		return -1;
+	}
     init();
     
     glutDisplayFunc(render);
