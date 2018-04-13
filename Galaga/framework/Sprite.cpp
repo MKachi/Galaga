@@ -33,6 +33,7 @@ bool Sprite::init(const string& textureKey)
 	{
 		return false;
 	}
+    _texture->retain();
 
 	return true;
 }
