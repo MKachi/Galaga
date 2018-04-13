@@ -55,6 +55,7 @@
 		0149455D2080384600D654C6 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		0149455E2080384600D654C6 /* Resources.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Resources.cpp; sourceTree = "<group>"; };
 		0149456120803A0800D654C6 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		0149456320803A8900D654C6 /* OpenAL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenAL.h; sourceTree = "<group>"; };
 		01934557207F5A0A00E42522 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		0193455A207F5A1E00E42522 /* Color32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color32.h; sourceTree = "<group>"; };
 		0193455B207F5A1E00E42522 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 				01934560207F5A1E00E42522 /* Vector2.h */,
 				01B5E854207F678B0004C8AB /* SceneManager.cpp */,
 				01B5E856207F67BE0004C8AB /* SceneManager.h */,
+				0149456320803A8900D654C6 /* OpenAL.h */,
 			);
 			path = framework;
 			sourceTree = "<group>";
