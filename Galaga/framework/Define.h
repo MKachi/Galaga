@@ -23,6 +23,8 @@ static _OBJECT_* create() \
 } \
 void render() override
 
+#define KEY_ASCII_SPACE 32
+
 template <typename T>
 inline void SAFE_DELETE(T*& obj)
 {
