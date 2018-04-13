@@ -76,6 +76,9 @@
     <ClCompile Include="framework\AudioSource.cpp">
       <Filter>Framework\Audio</Filter>
     </ClCompile>
+    <ClCompile Include="framework\Input.cpp">
+      <Filter>Framework\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework\Define.h">
@@ -140,6 +143,12 @@
       <Filter>Framework\Audio</Filter>
     </ClInclude>
     <ClInclude Include="framework\OpenGL.h">
+      <Filter>Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Input.h">
+      <Filter>Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\OpenAL.h">
       <Filter>Framework\Base</Filter>
     </ClInclude>
   </ItemGroup>

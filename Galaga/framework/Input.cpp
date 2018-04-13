@@ -1,5 +1,7 @@
 #include "Input.h"
 
+bool Input::_keys[KEY_COUNT];
+
 Input::Input()
 {   }
 
