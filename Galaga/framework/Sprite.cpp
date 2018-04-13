@@ -55,7 +55,10 @@ void Sprite::render()
 
 	for (auto& child : _children)
 	{
-		child->render();
+		if (child->isActive())
+		{
+			child->render();
+		}
 	}
 	glPopMatrix();
 }

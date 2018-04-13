@@ -10,7 +10,8 @@ Resources::~Resources()
 
 bool Resources::load()
 {
-	Texture* player = new (std::nothrow) Texture("Player");
+	#pragma region Player
+	Texture* player = new (std::nothrow) Texture(Player);
 	if (player == nullptr)
 	{
 		return false;
@@ -50,6 +51,39 @@ bool Resources::load()
 	}
 	player->glListEnd();
 	_manager->add(player);
+	#pragma endregion
+
+	#pragma region Enemy
+	Texture* snatcher = new (std::nothrow) Texture(Enemy);
+	if (snatcher == nullptr)
+	{
+		return false;
+	}
+	snatcher->glListBegin();
+	{
+		glColor3f(0.0f, 1.0f, 1.0f);
+		glBegin(GL_QUADS);
+		{
+			glVertex3f(0.0f, 15.0f, 0.0f);
+			glVertex3f(30.0f, 15.0f, 0.0f);
+			glVertex3f(30.0f, 35.0f, 0.0f);
+			glVertex3f(0.0f, 35.0f, 0.0f);
+
+			glVertex3f(0.0f, 0.0f, 0.0f);
+			glVertex3f(5.0f, 0.0f, 0.0f);
+			glVertex3f(5.0f, 15.0f, 0.0f);
+			glVertex3f(0.0f, 15.0f, 0.0f);
+
+			glVertex3f(25.0f, 0.0f, 0.0f);
+			glVertex3f(30.0f, 0.0f, 0.0f);
+			glVertex3f(30.0f, 15.0f, 0.0f);
+			glVertex3f(25.0f, 15.0f, 0.0f);
+		}
+		glEnd();
+	}
+	snatcher->glListEnd();
+	_manager->add(snatcher);
+	#pragma endregion
 
 	return true;
 }

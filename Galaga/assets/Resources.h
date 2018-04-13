@@ -2,6 +2,9 @@
 
 #include "../framework/CacheManager.h"
 
+#define Player		"Player"
+#define Enemy		"Enemy"
+
 class Resources final
 {
 private:

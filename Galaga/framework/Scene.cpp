@@ -33,6 +33,9 @@ void Scene::render()
 
 	for (auto& object : _objects)
 	{
-		object->render();
+		if (object->isActive())
+		{
+			object->render();
+		}
 	}
 }

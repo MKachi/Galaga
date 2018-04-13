@@ -88,7 +88,6 @@ void specialKeyup(int key, int x, int y)
         default:
             break;
     }
-    glutPostRedisplay();
 }
 
 void keyDown(unsigned char key, int x, int y)
@@ -106,7 +105,6 @@ void keyUp(unsigned char key, int x, int y)
     {
         Input::keyUpFunc(KeyCode::Space);
     }
-    glutPostRedisplay();
 }
 
 
