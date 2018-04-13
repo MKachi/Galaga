@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		014945582080381300D654C6 /* AudioListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 014945522080381200D654C6 /* AudioListener.cpp */; };
+		014945592080381300D654C6 /* AudioSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 014945552080381300D654C6 /* AudioSource.cpp */; };
+		0149455A2080381300D654C6 /* AudioClip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 014945572080381300D654C6 /* AudioClip.cpp */; };
+		0149455F2080384600D654C6 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0149455D2080384600D654C6 /* GameScene.cpp */; };
+		014945602080384600D654C6 /* Resources.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0149455E2080384600D654C6 /* Resources.cpp */; };
+		0149456220803A0E00D654C6 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0149456120803A0800D654C6 /* OpenAL.framework */; };
 		01934558207F5A0A00E42522 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01934557207F5A0A00E42522 /* main.cpp */; };
 		01934572207F5A1F00E42522 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0193455B207F5A1E00E42522 /* Sprite.cpp */; };
 		01934573207F5A1F00E42522 /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0193455C207F5A1E00E42522 /* Vector2.cpp */; };
@@ -37,6 +43,18 @@
 
 /* Begin PBXFileReference section */
 		0136A969207F5AE9001D57AE /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		014945512080380300D654C6 /* OpenGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGL.h; sourceTree = "<group>"; };
+		014945522080381200D654C6 /* AudioListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioListener.cpp; sourceTree = "<group>"; };
+		014945532080381300D654C6 /* AudioClip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioClip.h; sourceTree = "<group>"; };
+		014945542080381300D654C6 /* AudioListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioListener.h; sourceTree = "<group>"; };
+		014945552080381300D654C6 /* AudioSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioSource.cpp; sourceTree = "<group>"; };
+		014945562080381300D654C6 /* AudioSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioSource.h; sourceTree = "<group>"; };
+		014945572080381300D654C6 /* AudioClip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioClip.cpp; sourceTree = "<group>"; };
+		0149455B2080384600D654C6 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		0149455C2080384600D654C6 /* Resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resources.h; sourceTree = "<group>"; };
+		0149455D2080384600D654C6 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
+		0149455E2080384600D654C6 /* Resources.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Resources.cpp; sourceTree = "<group>"; };
+		0149456120803A0800D654C6 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		01934557207F5A0A00E42522 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		0193455A207F5A1E00E42522 /* Color32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color32.h; sourceTree = "<group>"; };
 		0193455B207F5A1E00E42522 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
@@ -74,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0149456220803A0E00D654C6 /* OpenAL.framework in Frameworks */,
 				01934580207F5A5F00E42522 /* GLUT.framework in Frameworks */,
 				0193457F207F5A5A00E42522 /* OpenGL.framework in Frameworks */,
 			);
@@ -85,6 +104,13 @@
 		01934559207F5A1200E42522 /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				014945572080381300D654C6 /* AudioClip.cpp */,
+				014945532080381300D654C6 /* AudioClip.h */,
+				014945522080381200D654C6 /* AudioListener.cpp */,
+				014945542080381300D654C6 /* AudioListener.h */,
+				014945552080381300D654C6 /* AudioSource.cpp */,
+				014945562080381300D654C6 /* AudioSource.h */,
+				014945512080380300D654C6 /* OpenGL.h */,
 				0193456B207F5A1F00E42522 /* Cache.cpp */,
 				0193456C207F5A1F00E42522 /* Cache.h */,
 				0193455E207F5A1E00E42522 /* CacheManager.cpp */,
@@ -118,6 +144,7 @@
 		0193457C207F5A4F00E42522 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0149456120803A0800D654C6 /* OpenAL.framework */,
 				0193457E207F5A5500E42522 /* GLUT.framework */,
 				0193457D207F5A4F00E42522 /* OpenGL.framework */,
 			);
@@ -127,6 +154,10 @@
 		01B5E853207F64DF0004C8AB /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				0149455D2080384600D654C6 /* GameScene.cpp */,
+				0149455B2080384600D654C6 /* GameScene.h */,
+				0149455E2080384600D654C6 /* Resources.cpp */,
+				0149455C2080384600D654C6 /* Resources.h */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -217,14 +248,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				01934574207F5A1F00E42522 /* CacheManager.cpp in Sources */,
+				0149455A2080381300D654C6 /* AudioClip.cpp in Sources */,
 				01934577207F5A1F00E42522 /* Node.cpp in Sources */,
+				014945582080381300D654C6 /* AudioListener.cpp in Sources */,
+				014945592080381300D654C6 /* AudioSource.cpp in Sources */,
 				01B5E855207F678B0004C8AB /* SceneManager.cpp in Sources */,
+				0149455F2080384600D654C6 /* GameScene.cpp in Sources */,
 				01934572207F5A1F00E42522 /* Sprite.cpp in Sources */,
 				01934579207F5A1F00E42522 /* Texture.cpp in Sources */,
 				01934576207F5A1F00E42522 /* Color32.cpp in Sources */,
 				0193457B207F5A1F00E42522 /* Color.cpp in Sources */,
 				01934573207F5A1F00E42522 /* Vector2.cpp in Sources */,
 				01934575207F5A1F00E42522 /* Scene.cpp in Sources */,
+				014945602080384600D654C6 /* Resources.cpp in Sources */,
 				0193457A207F5A1F00E42522 /* Geometry.cpp in Sources */,
 				01934578207F5A1F00E42522 /* Cache.cpp in Sources */,
 				01934558207F5A0A00E42522 /* main.cpp in Sources */,
