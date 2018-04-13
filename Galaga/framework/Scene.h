@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Node.h"
+#include "Timer.h"
 #include <vector>
 
 class Scene
@@ -16,6 +17,6 @@ public:
 	void render();
 
 	virtual void init() = 0;
-	virtual void update() = 0;
+	virtual void update(Timer& timer) = 0;
 
 };

@@ -108,6 +108,7 @@
     <ClCompile Include="framework\SceneManager.cpp" />
     <ClCompile Include="framework\Sprite.cpp" />
     <ClCompile Include="framework\Texture.cpp" />
+    <ClCompile Include="framework\Timer.cpp" />
     <ClCompile Include="framework\Vector2.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -134,6 +135,7 @@
     <ClInclude Include="framework\SceneManager.h" />
     <ClInclude Include="framework\Sprite.h" />
     <ClInclude Include="framework\Texture.h" />
+    <ClInclude Include="framework\Timer.h" />
     <ClInclude Include="framework\Type.h" />
     <ClInclude Include="framework\Vector2.h" />
   </ItemGroup>

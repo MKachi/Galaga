@@ -5,7 +5,7 @@ public: \
 _SCENE_(){} \
 virtual ~_SCENE_(){} \
 void init() override; \
-void update() override
+void update(Timer& timer) override
 
 #define CREATE_OBJECT(_OBJECT_) \
 protected: \

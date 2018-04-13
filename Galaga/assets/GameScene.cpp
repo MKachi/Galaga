@@ -6,8 +6,10 @@ void GameScene::init()
 	this->addObject(sprite);
 }
 
-void GameScene::update()
+void GameScene::update(Timer& timer)
 {
+	system("cls");
+	printf("%f\n", 1 / timer.getDeltaTime());
     if (Input::isKeyState(KeyCode::Left))
     {
         printf("Left\n");

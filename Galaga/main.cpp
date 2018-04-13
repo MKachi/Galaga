@@ -4,12 +4,14 @@
 #include "framework/SceneManager.h"
 #include "framework/AudioListener.h"
 #include "framework/Input.h"
+#include "framework/Timer.h"
 
 #if _WINDOWS
 #include <crtdbg.h>
 #endif
 
 SceneManager* manager = nullptr;
+Timer timer;
 
 void init()
 {
@@ -25,7 +27,8 @@ void init()
 
 void update()
 {
-	manager->topScene()->update();
+	timer.tick();
+	manager->topScene()->update(timer);
 }
 
 void render()

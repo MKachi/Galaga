@@ -79,6 +79,9 @@
     <ClCompile Include="framework\Input.cpp">
       <Filter>Framework\Base</Filter>
     </ClCompile>
+    <ClCompile Include="framework\Timer.cpp">
+      <Filter>Framework\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework\Define.h">
@@ -149,6 +152,9 @@
       <Filter>Framework\Base</Filter>
     </ClInclude>
     <ClInclude Include="framework\OpenAL.h">
+      <Filter>Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Timer.h">
       <Filter>Framework\Base</Filter>
     </ClInclude>
   </ItemGroup>
