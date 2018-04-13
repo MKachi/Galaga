@@ -138,9 +138,15 @@ int main(int argc, char** argv)
     init();
     
     glutDisplayFunc(render);
-    glutReshapeFunc(reshape);
-    glutSpecialFunc(specialKeyDown);
 	glutIdleFunc(update);
+    glutReshapeFunc(reshape);
+
+    glutSpecialFunc(specialKeyDown);
+	glutSpecialUpFunc(specialKeyup);
+
+	glutKeyboardFunc(keyDown);
+	glutKeyboardUpFunc(keyUp);
+
 	glutMainLoop();
 
 	SceneManager::destroy();
