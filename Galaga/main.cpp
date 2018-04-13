@@ -3,6 +3,7 @@
 #include "assets/Resources.h"
 #include "framework/SceneManager.h"
 #include "framework/AudioListener.h"
+#include "framework/Input.h"
 
 #if _WINDOWS
 #include <crtdbg.h>
@@ -43,6 +44,69 @@ void reshape(int w, int h)
     glOrtho(0.0f, SCREEN_WIDTH, 0.0f, SCREEN_HEIGHT, -1.0f, 1.0f);
 }
 
+void specialKeyDown(int key, int x, int y)
+{
+    switch (key)
+    {
+        case GLUT_KEY_LEFT:
+            Input::keyFunc(KeyCode::Left);
+            break;
+        case GLUT_KEY_RIGHT:
+            Input::keyFunc(KeyCode::Right);
+            break;
+        case GLUT_KEY_UP:
+            Input::keyFunc(KeyCode::Up);
+            break;
+        case GLUT_KEY_DOWN:
+            Input::keyFunc(KeyCode::Down);
+            break;
+        default:
+            break;
+    }
+    glutPostRedisplay();
+}
+
+void specialKeyup(int key, int x, int y)
+{
+    switch (key)
+    {
+        case GLUT_KEY_LEFT:
+            Input::keyUpFunc(KeyCode::Left);
+            break;
+        case GLUT_KEY_RIGHT:
+            Input::keyUpFunc(KeyCode::Right);
+            break;
+        case GLUT_KEY_UP:
+            Input::keyUpFunc(KeyCode::Up);
+            break;
+        case GLUT_KEY_DOWN:
+            Input::keyUpFunc(KeyCode::Down);
+            break;
+        default:
+            break;
+    }
+    glutPostRedisplay();
+}
+
+void keyDown(unsigned char key, int x, int y)
+{
+    if (key == GLUT_ASCII_SPACE)
+    {
+        Input::keyFunc(KeyCode::Space);
+    }
+    glutPostRedisplay();
+}
+
+void keyUp(unsigned char key, int x, int y)
+{
+    if (key == GLUT_ASCII_SPACE)
+    {
+        Input::keyUpFunc(KeyCode::Space);
+    }
+    glutPostRedisplay();
+}
+
+
 int main(int argc, char** argv)
 {
 #if defined(_WINDOWS) & defined(_DEBUG)
@@ -55,6 +119,8 @@ int main(int argc, char** argv)
     glutInitWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT);
     glutCreateWindow(TITLE_NAME);
 
+    Input::init();
+    
 	Resources resources;
 	if (!resources.load())
 	{
@@ -70,6 +136,7 @@ int main(int argc, char** argv)
     
     glutDisplayFunc(render);
     glutReshapeFunc(reshape);
+    glutSpecialFunc(specialKeyDown);
 	glutIdleFunc(update);
 	glutMainLoop();
 

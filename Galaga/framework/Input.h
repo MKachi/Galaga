@@ -4,7 +4,7 @@
 #include "Rule.h"
 
 enum KeyCode
-    : uint
+    : int
 {
     Up = 0,
     Down,
@@ -19,10 +19,10 @@ class Input final
 private:
     static bool _keys[KEY_COUNT];
     
-    Input();
-    
 public:
+    Input();
     ~Input();
+    
     static void init();
     
     static void keyFunc(KeyCode key);

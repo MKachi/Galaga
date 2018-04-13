@@ -8,5 +8,8 @@ void GameScene::init()
 
 void GameScene::update()
 {
-
+    if (Input::isKeyState(KeyCode::Left))
+    {
+        printf("Left\n");
+    }
 }
