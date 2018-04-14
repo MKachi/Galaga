@@ -5,6 +5,7 @@
 
 enum class EnemyState
 {
+	Die,
 	SpawnAction,
 	Idle,
 };

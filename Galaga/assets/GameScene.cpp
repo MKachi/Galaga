@@ -63,5 +63,16 @@ void GameScene::update(Timer& timer)
 		playerPos.x += 100.0f * timer.getDeltaTime();
 	}
 
+	if (Input::isKeyState(KeyCode::Space))
+	{
+		for (int i = 0; i < 28; ++i)
+		{
+			if (enemy[i]->getState() == EnemyState::Die)
+			{
+				enemy[i]->setState(EnemyState::SpawnAction);
+			}
+		}
+	}
+
 	player->setPosition(playerPos);
 }

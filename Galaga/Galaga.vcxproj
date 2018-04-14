@@ -127,6 +127,7 @@
     <ClInclude Include="framework\MathFunc.h" />
     <ClInclude Include="framework\Node.h" />
     <ClInclude Include="framework\OpenGL.h" />
+    <ClInclude Include="framework\Random.h" />
     <ClInclude Include="framework\Rule.h" />
     <ClInclude Include="framework\Scene.h" />
     <ClInclude Include="framework\SceneManager.h" />
