@@ -50,10 +50,14 @@ void GameScene::init()
 	{
 		bullet[i] = new Bullet(this);
 	}
+
+	_scheduler = new Scheduler();
+	_scheduler->addSchedule(scheduleOnce(GameScene::firstSpawn, 3.0f));
 }
 
 void GameScene::update(Timer& timer)
 {
+	_scheduler->update(timer.getDeltaTime());
 	fireCount += timer.getDeltaTime();
 	for (int i = 0; i < EnemyPoolSize; ++i)
 	{
@@ -68,22 +72,22 @@ void GameScene::update(Timer& timer)
 	Vector2 playerPos = player->getPosition();
 	if (Input::isKeyState(KeyCode::Up))
 	{
-		playerPos.y += 100.0f * timer.getDeltaTime();
+		playerPos.y = clamp(playerPos.y + playerSpeed * timer.getDeltaTime(), 0.0f, SCREEN_HEIGHT - 60.0f);
 	}
 	
 	if (Input::isKeyState(KeyCode::Down))
 	{
-		playerPos.y -= 100.0f * timer.getDeltaTime();
+		playerPos.y = clamp(playerPos.y - playerSpeed * timer.getDeltaTime(), 0.0f, SCREEN_HEIGHT - 60.0f);
 	}
 
 	if (Input::isKeyState(KeyCode::Left))
 	{
-		playerPos.x -= 100.0f * timer.getDeltaTime();
+		playerPos.x = clamp(playerPos.x - playerSpeed * timer.getDeltaTime(), 0.0f, SCREEN_WIDTH - 60.0f);
 	}
 
 	if (Input::isKeyState(KeyCode::Right))
 	{
-		playerPos.x += 100.0f * timer.getDeltaTime();
+		playerPos.x = clamp(playerPos.x + playerSpeed * timer.getDeltaTime(), 0.0f, SCREEN_WIDTH - 60.0f);
 	}
 
 	if (Input::isKeyState(KeyCode::Space))
@@ -103,4 +107,12 @@ void GameScene::update(Timer& timer)
 	}
 
 	player->setPosition(playerPos);
+}
+
+void GameScene::firstSpawn(float dt)
+{
+	for (int i = 0; i < EnemyPoolSize; ++i)
+	{
+		enemy[i]->setState(EnemyState::SpawnAction);
+	}
 }

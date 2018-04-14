@@ -5,8 +5,9 @@
 Enemy::Enemy(Scene* scene, Vector2 position, Direction direction)
 	: _sprite(nullptr)
 	, _position(position)
+	, _movePosition(position)
 	, _direction(direction)
-	, _state(EnemyState::Die)
+	, _state(EnemyState::None)
 {
 	_sprite = Sprite::create("Enemy");
 	_sprite->setActive(false);
@@ -38,34 +39,38 @@ void Enemy::setState(EnemyState state)
 	case EnemyState::Idle:
 		_sprite->setPosition(_position);
 		return;
+	case EnemyState::Die:
+		_scheduler->addSchedule(scheduleOnce(Enemy::respawn, 2.0f));
+		return;
 	default:
 		return;
 	}
+}
+
+void Enemy::respawn(float dt)
+{
+	setState(EnemyState::SpawnAction);
 }
 
 void Enemy::idleAction(Timer& timer)
 {
 	if (_direction == Direction::Left)
 	{
-		if (_position.x - 35 > _sprite->getPosition().x)
+		if (_position.x - 35 > _movePosition.x)
 		{
 			_direction = Direction::Right;
 			return;
 		}
-		_sprite->setPosition(Vector2(
-			_sprite->getPosition().x - 30.0f * timer.getDeltaTime(),
-			_sprite->getPosition().y));
+		_movePosition.x -= 30.0f * timer.getDeltaTime();
 	}
 	else
 	{
-		if (_position.x + 35 < _sprite->getPosition().x)
+		if (_position.x + 35 < _movePosition.x)
 		{
 			_direction = Direction::Left;
 			return;
 		}
-		_sprite->setPosition(Vector2(
-			_sprite->getPosition().x + 30.0f * timer.getDeltaTime(),
-			_sprite->getPosition().y));
+		_movePosition.x += 30.0f * timer.getDeltaTime();
 	}
 }
 
@@ -93,8 +98,12 @@ void Enemy::update(Timer& timer)
 	case EnemyState::SpawnAction:
 		spawnAction(timer);
 		return;
+	case EnemyState::Die:
+		idleAction(timer);
+		return;
 	case EnemyState::Idle:
 		idleAction(timer);
+		_sprite->setPosition(_movePosition);
 		return;
 	default:
 		return;

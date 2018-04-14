@@ -7,6 +7,7 @@
 
 enum class EnemyState
 {
+	None,
 	Die,
 	SpawnAction,
 	Idle,
@@ -22,6 +23,7 @@ class Enemy
 private:
 	Sprite*		_sprite;
 	Vector2		_position;
+	Vector2		_movePosition;
 	Direction	_direction;
 	EnemyState	_state;
 	Scheduler*	_scheduler;
@@ -31,6 +33,7 @@ private:
 	void idleAction(Timer& timer);
 
 	void nextAction(float dt);
+	void respawn(float dt);
 
 public:
 	Enemy(Scene* scene, Vector2 position, Direction direction);

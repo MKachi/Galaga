@@ -7,6 +7,7 @@
 
 enum : uint { EnemyPoolSize = 28, BulletSize = 100, };
 const float fireDelay = 0.3f;
+const float playerSpeed = 200.0f;
 
 class GameScene final
 	: public Scene
@@ -19,8 +20,12 @@ private:
 	Bullet* bullet[BulletSize];
 	float	fireCount;
 
+	Scheduler* _scheduler;
+
 public:
 	GameScene();
 	virtual ~GameScene();
+
+	void firstSpawn(float dt);
 
 };
