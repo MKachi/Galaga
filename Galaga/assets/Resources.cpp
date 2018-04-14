@@ -61,7 +61,6 @@ bool Resources::load()
 	}
 	snatcher->glListBegin();
 	{
-		glColor3f(0.0f, 1.0f, 1.0f);
 		glBegin(GL_QUADS);
 		{
 			glVertex3f(0.0f, 15.0f, 0.0f);
@@ -83,6 +82,28 @@ bool Resources::load()
 	}
 	snatcher->glListEnd();
 	_manager->add(snatcher);
+	#pragma endregion
+
+	#pragma region Bullet
+	Texture* bullet = new (std::nothrow) Texture(Bullet);
+	if (bullet == nullptr)
+	{
+		return false;
+	}
+	bullet->glListBegin();
+	{
+		glColor3f(0.0f, 0.0f, 0.0f);
+		glBegin(GL_QUADS);
+		{
+			glVertex3f(0.0f, 0.0f, 0.0f);
+			glVertex3f(3.0f, 0.0f, 0.0f);
+			glVertex3f(3.0f, 20.0f, 0.0f);
+			glVertex3f(0.0f, 20.0f, 0.0f);
+		}
+		glEnd();
+	}
+	bullet->glListEnd();
+	_manager->add(bullet);
 	#pragma endregion
 
 	return true;

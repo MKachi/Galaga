@@ -23,7 +23,6 @@ void Scene::addObject(Node* object)
 void Scene::render()
 {
     glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
 
 	std::sort(_objects.begin(), _objects.end()
 		, [](Node* a, Node* b)-> bool
@@ -33,6 +32,7 @@ void Scene::render()
 
 	for (auto& object : _objects)
 	{
+		glLoadIdentity();
 		if (object->isActive())
 		{
 			object->render();

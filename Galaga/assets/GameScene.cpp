@@ -1,15 +1,29 @@
 #include "GameScene.h"
+#include "Resources.h"
+#include "../Config.h"
 
 void GameScene::init()
 {
 	player = Sprite::create(Player);
+	player->setPosition(Vector2(SCREEN_WIDTH / 2, 0.0f));
 	this->addObject(player);
 
-	for (int i = 0; i < EnemyPoolSize; ++i)
+	int index = 0;
+	Vector2 position((SCREEN_WIDTH / 2) - (35 * 4), SCREEN_HEIGHT - 50);
+
+	for (int y = 0; y < 4; ++y)
 	{
-		enemy[i] = Sprite::create(Enemy);
-		enemy[i]->setActive(false);
-		this->addObject(enemy[i]);
+		for (int x = 0; x < 7; ++x)
+		{
+			enemy[index] = Sprite::create(Enemy);
+			enemy[index]->setPosition(position);
+			this->addObject(enemy[index]);
+
+			position.x += 40;
+			++index;
+		}
+		position.x = (SCREEN_WIDTH / 2) - (35 * 4);
+		position.y -= 50;
 	}
 }
 

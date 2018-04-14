@@ -1,11 +1,10 @@
 #pragma once
 
-#include "Resources.h"
 #include "../framework/Scene.h"
 #include "../framework/Sprite.h"
 #include "../framework/Input.h"
 
-enum : uint { EnemyPoolSize = 100 };
+enum : uint { EnemyPoolSize = 30 };
 
 class GameScene final
 	: public Scene

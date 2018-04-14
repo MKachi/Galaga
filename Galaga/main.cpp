@@ -2,7 +2,6 @@
 #include "Config.h"
 #include "assets/Resources.h"
 #include "framework/SceneManager.h"
-#include "framework/AudioListener.h"
 #include "framework/Input.h"
 #include "framework/Timer.h"
 
@@ -124,12 +123,6 @@ int main(int argc, char** argv)
     
 	Resources resources;
 	if (!resources.load())
-	{
-		return -1;
-	}
-
-	AudioListener listener;
-	if (!listener.init())
 	{
 		return -1;
 	}

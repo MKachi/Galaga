@@ -7,7 +7,7 @@
 class Sprite
 	: public Node
 {
-private:
+protected:
 	Texture* _texture;
 
 	bool init(const string& textureKey);

@@ -66,7 +66,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;glut32.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>copy $(SolutionDir)ThirdParty\dll\*.dll $(SolutionDir)\Build\Products\$(Configuration) /y</Command>
@@ -85,18 +85,17 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;glut32.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>copy $(SolutionDir)ThirdParty\dll\*.dll $(SolutionDir)\Build\Products\$(Configuration) /y</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="assets\Enemy.cpp" />
     <ClCompile Include="assets\GameScene.cpp" />
     <ClCompile Include="assets\Resources.cpp" />
     <ClCompile Include="framework\AudioClip.cpp" />
-    <ClCompile Include="framework\AudioListener.cpp" />
-    <ClCompile Include="framework\AudioSource.cpp" />
     <ClCompile Include="framework\Cache.cpp" />
     <ClCompile Include="framework\CacheManager.cpp" />
     <ClCompile Include="framework\Color.cpp" />
@@ -113,12 +112,11 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="assets\Enemy.h" />
     <ClInclude Include="assets\GameScene.h" />
     <ClInclude Include="assets\Resources.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="framework\AudioClip.h" />
-    <ClInclude Include="framework\AudioListener.h" />
-    <ClInclude Include="framework\AudioSource.h" />
     <ClInclude Include="framework\Cache.h" />
     <ClInclude Include="framework\CacheManager.h" />
     <ClInclude Include="framework\Color.h" />
@@ -128,7 +126,6 @@
     <ClInclude Include="framework\Input.h" />
     <ClInclude Include="framework\MathFunc.h" />
     <ClInclude Include="framework\Node.h" />
-    <ClInclude Include="framework\OpenAL.h" />
     <ClInclude Include="framework\OpenGL.h" />
     <ClInclude Include="framework\Rule.h" />
     <ClInclude Include="framework\Scene.h" />

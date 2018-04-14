@@ -43,7 +43,6 @@ void Sprite::render()
 	glTranslatef(_position.x, _position.y, 0.0f);
 	glRotatef(_rotate, 0.0f, 0.0f, 1.0f);
 	glScalef(_scale.x, _scale.y, 1.0f);
-	glPushMatrix();
 
 	_texture->bind();
 
@@ -53,6 +52,7 @@ void Sprite::render()
 		return a->getDepth() < b->getDepth();
 	});
 
+	glPushMatrix();
 	for (auto& child : _children)
 	{
 		if (child->isActive())

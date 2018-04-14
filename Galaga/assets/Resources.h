@@ -4,6 +4,7 @@
 
 #define Player		"Player"
 #define Enemy		"Enemy"
+#define Bullet		"Bullet"
 
 class Resources final
 {

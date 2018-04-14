@@ -22,8 +22,8 @@
     <Filter Include="Assets\Classes">
       <UniqueIdentifier>{5e7e0cf9-e80b-4845-ad66-25ab5f1972df}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Framework\Audio">
-      <UniqueIdentifier>{57018934-2809-4690-b0a3-64e958669a83}</UniqueIdentifier>
+    <Filter Include="Assets\Object">
+      <UniqueIdentifier>{c7525b82-e122-4fab-97fb-b64e103ddac7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -70,17 +70,14 @@
     <ClCompile Include="framework\AudioClip.cpp">
       <Filter>Framework\Cache</Filter>
     </ClCompile>
-    <ClCompile Include="framework\AudioListener.cpp">
-      <Filter>Framework\Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="framework\AudioSource.cpp">
-      <Filter>Framework\Audio</Filter>
-    </ClCompile>
     <ClCompile Include="framework\Input.cpp">
       <Filter>Framework\Base</Filter>
     </ClCompile>
     <ClCompile Include="framework\Timer.cpp">
       <Filter>Framework\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="assets\Enemy.cpp">
+      <Filter>Assets\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -139,23 +136,17 @@
     <ClInclude Include="framework\AudioClip.h">
       <Filter>Framework\Cache</Filter>
     </ClInclude>
-    <ClInclude Include="framework\AudioListener.h">
-      <Filter>Framework\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="framework\AudioSource.h">
-      <Filter>Framework\Audio</Filter>
-    </ClInclude>
     <ClInclude Include="framework\OpenGL.h">
       <Filter>Framework\Base</Filter>
     </ClInclude>
     <ClInclude Include="framework\Input.h">
       <Filter>Framework\Base</Filter>
     </ClInclude>
-    <ClInclude Include="framework\OpenAL.h">
-      <Filter>Framework\Base</Filter>
-    </ClInclude>
     <ClInclude Include="framework\Timer.h">
       <Filter>Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="assets\Enemy.h">
+      <Filter>Assets\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
