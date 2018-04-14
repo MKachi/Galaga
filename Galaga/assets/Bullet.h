@@ -11,6 +11,13 @@ private:
 	Rect	_rect;
 
 public:
+	Bullet(Scene* scene);
+	~Bullet();
 
+	void spawn(const Vector2& position);
+	void update(Timer& timer);
+
+	Rect getRect() { return _rect; }
+	bool isActive() { return _sprite->isActive(); }
 
 };

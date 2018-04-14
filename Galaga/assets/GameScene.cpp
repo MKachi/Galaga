@@ -17,6 +17,7 @@ void GameScene::init()
 {
 	player = Sprite::create(ResPlayer);
 	player->setPosition(Vector2(SCREEN_WIDTH / 2, 0.0f));
+	player->setDepth(-1);
 	this->addObject(player);
 
 	int index = 0;
@@ -43,13 +44,25 @@ void GameScene::init()
 		position.x = (SCREEN_WIDTH / 2) - (35 * 4);
 		position.y -= 50;
 	}
+
+	fireCount = 0.0f;
+	for (int i = 0; i < BulletSize; ++i)
+	{
+		bullet[i] = new Bullet(this);
+	}
 }
 
 void GameScene::update(Timer& timer)
 {
+	fireCount += timer.getDeltaTime();
 	for (int i = 0; i < EnemyPoolSize; ++i)
 	{
 		enemy[i]->update(timer);
+	}
+
+	for (int i = 0; i < BulletSize; ++i)
+	{
+		bullet[i]->update(timer);
 	}
 
 	Vector2 playerPos = player->getPosition();
@@ -75,11 +88,16 @@ void GameScene::update(Timer& timer)
 
 	if (Input::isKeyState(KeyCode::Space))
 	{
-		for (int i = 0; i < EnemyPoolSize; ++i)
+		if (fireCount >= fireDelay)
 		{
-			if (enemy[i]->getState() == EnemyState::Die)
+			fireCount = 0.0f;
+			for (int i = 0; i < BulletSize; ++i)
 			{
-				enemy[i]->setState(EnemyState::SpawnAction);
+				if (!bullet[i]->isActive())
+				{
+					bullet[i]->spawn(Vector2(player->getPosition().x + 23, player->getPosition().y + 60));
+					break;
+				}
 			}
 		}
 	}

@@ -61,6 +61,7 @@ bool Resources::load()
 	}
 	snatcher->glListBegin();
 	{
+		glColor3f(0.0f, 1.0f, 1.0f);
 		glBegin(GL_QUADS);
 		{
 			glVertex3f(0.0f, 15.0f, 0.0f);
@@ -92,7 +93,7 @@ bool Resources::load()
 	}
 	bullet->glListBegin();
 	{
-		glColor3f(0.0f, 0.0f, 0.0f);
+		glColor3f(1.0f, 1.0f, 1.0f);
 		glBegin(GL_QUADS);
 		{
 			glVertex3f(0.0f, 0.0f, 0.0f);

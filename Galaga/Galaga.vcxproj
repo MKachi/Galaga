@@ -92,6 +92,7 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="assets\Bullet.cpp" />
     <ClCompile Include="assets\Enemy.cpp" />
     <ClCompile Include="assets\GameScene.cpp" />
     <ClCompile Include="assets\Resources.cpp" />
@@ -113,6 +114,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="assets\Bullet.h" />
     <ClInclude Include="assets\Enemy.h" />
     <ClInclude Include="assets\GameScene.h" />
     <ClInclude Include="assets\Resources.h" />

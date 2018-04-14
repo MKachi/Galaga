@@ -82,6 +82,9 @@
     <ClCompile Include="framework\Scheduler.cpp">
       <Filter>Framework\Base</Filter>
     </ClCompile>
+    <ClCompile Include="assets\Bullet.cpp">
+      <Filter>Assets\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework\Define.h">
@@ -156,6 +159,9 @@
     </ClInclude>
     <ClInclude Include="framework\Scheduler.h">
       <Filter>Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="assets\Bullet.h">
+      <Filter>Assets\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

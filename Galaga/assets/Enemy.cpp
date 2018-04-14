@@ -38,6 +38,8 @@ void Enemy::setState(EnemyState state)
 	case EnemyState::Idle:
 		_sprite->setPosition(_position);
 		return;
+	default:
+		return;
 	}
 }
 
