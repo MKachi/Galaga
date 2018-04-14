@@ -26,6 +26,10 @@ public:
 	GameScene();
 	virtual ~GameScene();
 
+	void inputUpdate(float dt);
+	void physicsUpdate();
+
+	// schedule func
 	void firstSpawn(float dt);
 
 };

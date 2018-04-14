@@ -32,7 +32,7 @@ public:
 class Scheduler
 {
 private:
-	std::vector<Schedule> _schdules;
+	std::vector<Schedule*> _schedules;
 
 public:
 	Scheduler();

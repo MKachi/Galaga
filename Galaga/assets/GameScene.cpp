@@ -1,6 +1,7 @@
 #include "GameScene.h"
 #include "Resources.h"
 #include "../Config.h"
+#include "../framework/MathFunc.h"
 
 GameScene::GameScene()
 {	}
@@ -53,6 +54,21 @@ void GameScene::init()
 
 	_scheduler = new Scheduler();
 	_scheduler->addSchedule(scheduleOnce(GameScene::firstSpawn, 3.0f));
+
+	Rect rect1;
+	rect1.SetRect(0, 0, 300, 300);
+
+	Rect rect2;
+	rect2.SetRect(400, 400, 300, 300);
+
+	if (rect1.intersectRect(rect2))
+	{
+		printf("True\n");
+	}
+	else
+	{
+		printf("False\n");
+	}
 }
 
 void GameScene::update(Timer& timer)
@@ -69,25 +85,31 @@ void GameScene::update(Timer& timer)
 		bullet[i]->update(timer);
 	}
 
+	inputUpdate(timer.getDeltaTime());
+	physicsUpdate();
+}
+
+void GameScene::inputUpdate(float dt)
+{
 	Vector2 playerPos = player->getPosition();
 	if (Input::isKeyState(KeyCode::Up))
 	{
-		playerPos.y = clamp(playerPos.y + playerSpeed * timer.getDeltaTime(), 0.0f, SCREEN_HEIGHT - 60.0f);
+		playerPos.y = clamp(playerPos.y + playerSpeed * dt, 0.0f, SCREEN_HEIGHT - 60.0f);
 	}
-	
+
 	if (Input::isKeyState(KeyCode::Down))
 	{
-		playerPos.y = clamp(playerPos.y - playerSpeed * timer.getDeltaTime(), 0.0f, SCREEN_HEIGHT - 60.0f);
+		playerPos.y = clamp(playerPos.y - playerSpeed * dt, 0.0f, SCREEN_HEIGHT - 60.0f);
 	}
 
 	if (Input::isKeyState(KeyCode::Left))
 	{
-		playerPos.x = clamp(playerPos.x - playerSpeed * timer.getDeltaTime(), 0.0f, SCREEN_WIDTH - 60.0f);
+		playerPos.x = clamp(playerPos.x - playerSpeed * dt, 0.0f, SCREEN_WIDTH - 60.0f);
 	}
 
 	if (Input::isKeyState(KeyCode::Right))
 	{
-		playerPos.x = clamp(playerPos.x + playerSpeed * timer.getDeltaTime(), 0.0f, SCREEN_WIDTH - 60.0f);
+		playerPos.x = clamp(playerPos.x + playerSpeed * dt, 0.0f, SCREEN_WIDTH - 60.0f);
 	}
 
 	if (Input::isKeyState(KeyCode::Space))
@@ -109,6 +131,30 @@ void GameScene::update(Timer& timer)
 	player->setPosition(playerPos);
 }
 
+void GameScene::physicsUpdate()
+{
+	for (int i = 0; i < BulletSize; ++i)
+	{
+		if (bullet[i]->isActive())
+		{
+			for (int j = 0; j < EnemyPoolSize; ++j)
+			{
+				if (enemy[j]->getState() != EnemyState::Die)
+				{
+					Rect enemyRect = enemy[j]->getRect();
+					if (enemyRect.intersectRect(bullet[i]->getRect()))
+					{
+						bullet[i]->setActive(false);
+						enemy[j]->setState(EnemyState::Die);
+						return;
+					}
+				}
+			}
+		}
+	}
+}
+
+// schedule func
 void GameScene::firstSpawn(float dt)
 {
 	for (int i = 0; i < EnemyPoolSize; ++i)

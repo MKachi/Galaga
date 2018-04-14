@@ -6,6 +6,7 @@ Schedule::Schedule(const std::function<void(float)>& function, const string& key
 	, _time(time)
 	, _counter(0.0f)
 	, _once(once)
+	, _key(key)
 	, _scheduler(scheduler)
 {	}
 
@@ -30,30 +31,39 @@ Scheduler::Scheduler()
 {	}
 
 Scheduler::~Scheduler()
-{	}
+{	
+	for (int i = 0; i < _schedules.size(); ++i)
+	{
+		SAFE_DELETE(_schedules[i]);
+	}
+}
 
 void Scheduler::addSchedule(const std::function<void(float)>& function, const string& key, float time, bool once)
 {
-	_schdules.push_back(Schedule(function, key, time, once, this));
+	_schedules.push_back(new Schedule(function, key, time, once, this));
 }
 
 void Scheduler::removeSchedule(const string& key)
 {
-	auto iter = _schdules.begin();
-	for (; iter != _schdules.end(); ++iter)
+	std::vector<Schedule*>::iterator iter = _schedules.begin();
+	for (; iter != _schedules.end(); ++iter)
 	{
-		if ((*iter).getKey() == key)
+		if ((*iter)->getKey() == key)
 		{
 			break;
 		}
 	}
-	_schdules.erase(iter);
+	
+	if (iter != _schedules.end())
+	{
+		_schedules.erase(iter);
+	}
 }
 
 void Scheduler::update(float dt)
 {
-	for (auto& schedule : _schdules)
+	for (int i = 0; i < _schedules.size(); ++i)
 	{
-		schedule.update(dt);
+		_schedules[i]->update(dt);
 	}
 }

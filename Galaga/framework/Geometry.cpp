@@ -95,3 +95,11 @@ void Rect::SetRect(float x, float y, float w, float h)
 	size.width = w;
 	size.height = h;
 }
+
+bool Rect::intersectRect(const Rect& rect)
+{
+	return !(origin.x >= size.width &&
+		origin.y >= size.height &&
+		size.width <= origin.x &&
+		size.height <= origin.y);
+}

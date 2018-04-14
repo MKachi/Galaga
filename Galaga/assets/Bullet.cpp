@@ -31,7 +31,7 @@ void Bullet::update(Timer& timer)
 
 	_rect.SetRect(
 		_sprite->getPosition().x, _sprite->getPosition().y
-		, 3.0f, 20.0f);
+		, _sprite->getPosition().x + 3.0f, _sprite->getPosition().y + 20.0f);
 
 	_sprite->setPosition(Vector2(
 		_sprite->getPosition().x,
@@ -40,4 +40,9 @@ void Bullet::update(Timer& timer)
 	{
 		_sprite->setActive(false);
 	}
+}
+
+void Bullet::setActive(bool active)
+{
+	_sprite->setActive(active);
 }

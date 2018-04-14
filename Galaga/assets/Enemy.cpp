@@ -89,23 +89,27 @@ void Enemy::spawnAction(Timer& timer)
 
 void Enemy::update(Timer& timer)
 {
-	_rect.SetRect(
-		_sprite->getPosition().x, _sprite->getPosition().y
-		, 35.0f, 35.0f);
-	_scheduler->update(timer.getDeltaTime());
+	if (_sprite->isActive())
+	{
+		_scheduler->update(timer.getDeltaTime());
+	}
+
 	switch (_state)
 	{
 	case EnemyState::SpawnAction:
 		spawnAction(timer);
-		return;
+		break;
 	case EnemyState::Die:
 		idleAction(timer);
-		return;
+		break;
 	case EnemyState::Idle:
 		idleAction(timer);
 		_sprite->setPosition(_movePosition);
-		return;
+		break;
 	default:
-		return;
+		break;
 	}
+	_rect.SetRect(
+		_sprite->getPosition().x, _sprite->getPosition().y
+		, _sprite->getPosition().x + 35.0f, _sprite->getPosition().y + 35.0f);
 }

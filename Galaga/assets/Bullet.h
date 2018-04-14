@@ -18,6 +18,8 @@ public:
 	void update(Timer& timer);
 
 	Rect getRect() { return _rect; }
+
+	void setActive(bool active);
 	bool isActive() { return _sprite->isActive(); }
 
 };
