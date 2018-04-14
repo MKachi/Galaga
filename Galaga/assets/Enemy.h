@@ -22,6 +22,9 @@ private:
 	Direction	_direction;
 	EnemyState	_state;
 
+	// Enemy가 스폰될 때 X좌표의 값이 도착지점보다 큰가?
+	bool		_spawnBigX;
+
 	void spawnAction(Timer& timer);
 	void idleAction(Timer& timer);
 

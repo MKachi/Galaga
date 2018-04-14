@@ -23,11 +23,10 @@ void Enemy::setState(EnemyState state)
 	case EnemyState::SpawnAction:
 		_sprite->setPosition(Vector2(SCREEN_WIDTH, SCREEN_HEIGHT + 35));
 		_sprite->setActive(true);
-		break;
+		return;
 	case EnemyState::Idle:
-		break;
-	default:
-		break;
+		_sprite->setPosition(_position);
+		return;
 	}
 }
 
@@ -59,6 +58,7 @@ void Enemy::idleAction(Timer& timer)
 
 void Enemy::spawnAction(Timer& timer)
 {
+
 }
 
 void Enemy::update(Timer& timer)
