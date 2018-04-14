@@ -9,18 +9,24 @@ enum class EnemyState
 	Idle,
 };
 
+enum class Direction 
+{ 
+	Left, Right 
+};
+
 class Enemy
 {
 private:
 	Sprite*		_sprite;
-	EnemyState	_state;
 	Vector2		_position;
+	Direction	_direction;
+	EnemyState	_state;
 
 	void spawnAction(Timer& timer);
 	void idleAction(Timer& timer);
 
 public:
-	Enemy(Scene* scene, Vector2 position);
+	Enemy(Scene* scene, Vector2 position, Direction direction);
 	~Enemy();
 
 	void setState(EnemyState state);

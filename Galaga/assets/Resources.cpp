@@ -11,7 +11,7 @@ Resources::~Resources()
 bool Resources::load()
 {
 	#pragma region Player
-	Texture* player = new (std::nothrow) Texture(Player);
+	Texture* player = new (std::nothrow) Texture(ResPlayer);
 	if (player == nullptr)
 	{
 		return false;
@@ -54,7 +54,7 @@ bool Resources::load()
 	#pragma endregion
 
 	#pragma region Enemy
-	Texture* snatcher = new (std::nothrow) Texture(Enemy);
+	Texture* snatcher = new (std::nothrow) Texture(ResEnemy);
 	if (snatcher == nullptr)
 	{
 		return false;
@@ -85,7 +85,7 @@ bool Resources::load()
 	#pragma endregion
 
 	#pragma region Bullet
-	Texture* bullet = new (std::nothrow) Texture(Bullet);
+	Texture* bullet = new (std::nothrow) Texture(ResBullet);
 	if (bullet == nullptr)
 	{
 		return false;

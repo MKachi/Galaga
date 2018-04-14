@@ -24,10 +24,12 @@ void init()
     glOrtho(0.0f, SCREEN_WIDTH, 0.0f, SCREEN_HEIGHT, -1.0f, 1.0f);
 }
 
-void update()
+void update(int value)
 {
 	timer.tick();
 	manager->topScene()->update(timer);
+
+	glutTimerFunc(1000 / 60, update, 0);
 }
 
 void render()
@@ -36,6 +38,12 @@ void render()
 	manager->topScene()->render();
     glFlush();
 	glutSwapBuffers();
+}
+
+void postSync(int value)
+{
+	glutPostRedisplay();
+	glutTimerFunc(1000 / 60, postSync, 0);
 }
 
 void reshape(int w, int h)
@@ -65,7 +73,6 @@ void specialKeyDown(int key, int x, int y)
         default:
             break;
     }
-    glutPostRedisplay();
 }
 
 void specialKeyup(int key, int x, int y)
@@ -95,7 +102,6 @@ void keyDown(unsigned char key, int x, int y)
     {
         Input::keyFunc(KeyCode::Space);
     }
-    glutPostRedisplay();
 }
 
 void keyUp(unsigned char key, int x, int y)
@@ -129,7 +135,6 @@ int main(int argc, char** argv)
     init();
     
     glutDisplayFunc(render);
-	glutIdleFunc(update);
     glutReshapeFunc(reshape);
 
     glutSpecialFunc(specialKeyDown);
@@ -138,6 +143,8 @@ int main(int argc, char** argv)
 	glutKeyboardFunc(keyDown);
 	glutKeyboardUpFunc(keyUp);
 
+	update(1);
+	postSync(1);
 	glutMainLoop();
 
 	SceneManager::destroy();

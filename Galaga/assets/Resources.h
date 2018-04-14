@@ -2,9 +2,9 @@
 
 #include "../framework/CacheManager.h"
 
-#define Player		"Player"
-#define Enemy		"Enemy"
-#define Bullet		"Bullet"
+#define ResPlayer		"Player"
+#define ResEnemy		"Enemy"
+#define ResBullet		"Bullet"
 
 class Resources final
 {

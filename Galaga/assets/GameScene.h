@@ -1,10 +1,10 @@
 #pragma once
 
 #include "../framework/Scene.h"
-#include "../framework/Sprite.h"
 #include "../framework/Input.h"
+#include "Enemy.h"
 
-enum : uint { EnemyPoolSize = 30 };
+enum : uint { EnemyPoolSize = 28 };
 
 class GameScene final
 	: public Scene
@@ -12,6 +12,6 @@ class GameScene final
 	CREATE_SCENE(GameScene);
 private:
 	Sprite* player;
-	Sprite* enemy[EnemyPoolSize];
+	Enemy* enemy[EnemyPoolSize];
 
 };
