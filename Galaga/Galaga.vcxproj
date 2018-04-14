@@ -105,6 +105,7 @@
     <ClCompile Include="framework\Node.cpp" />
     <ClCompile Include="framework\Scene.cpp" />
     <ClCompile Include="framework\SceneManager.cpp" />
+    <ClCompile Include="framework\Schedule.cpp" />
     <ClCompile Include="framework\Sprite.cpp" />
     <ClCompile Include="framework\Texture.cpp" />
     <ClCompile Include="framework\Timer.cpp" />
@@ -131,6 +132,7 @@
     <ClInclude Include="framework\Rule.h" />
     <ClInclude Include="framework\Scene.h" />
     <ClInclude Include="framework\SceneManager.h" />
+    <ClInclude Include="framework\Schedule.h" />
     <ClInclude Include="framework\Sprite.h" />
     <ClInclude Include="framework\Texture.h" />
     <ClInclude Include="framework\Timer.h" />

@@ -4,6 +4,7 @@
 #include "framework/SceneManager.h"
 #include "framework/Input.h"
 #include "framework/Timer.h"
+#include "framework/Schedule.h"
 
 #if _WINDOWS
 #include <crtdbg.h>
@@ -28,7 +29,7 @@ void update(int value)
 {
 	timer.tick();
 	manager->topScene()->update(timer);
-
+	updateSchedules(timer.getDeltaTime());
 	glutTimerFunc(1000 / 60, update, 0);
 }
 
