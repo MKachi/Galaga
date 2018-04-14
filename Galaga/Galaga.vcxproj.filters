@@ -79,7 +79,7 @@
     <ClCompile Include="assets\Enemy.cpp">
       <Filter>Assets\Object</Filter>
     </ClCompile>
-    <ClCompile Include="framework\Schedule.cpp">
+    <ClCompile Include="framework\Scheduler.cpp">
       <Filter>Framework\Base</Filter>
     </ClCompile>
   </ItemGroup>
@@ -154,7 +154,7 @@
     <ClInclude Include="framework\Random.h">
       <Filter>Framework\Math</Filter>
     </ClInclude>
-    <ClInclude Include="framework\Schedule.h">
+    <ClInclude Include="framework\Scheduler.h">
       <Filter>Framework\Base</Filter>
     </ClInclude>
   </ItemGroup>

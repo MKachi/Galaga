@@ -11,10 +11,18 @@ Enemy::Enemy(Scene* scene, Vector2 position, Direction direction)
 	_sprite = Sprite::create("Enemy");
 	_sprite->setActive(false);
 	scene->addObject(_sprite);
+
+	_rect.SetRect(
+		_sprite->getPosition().x, _sprite->getPosition().y
+		, 35.0f, 35.0f);
+
+	_scheduler = new Scheduler();
 }
 
 Enemy::~Enemy()
-{	}
+{	
+	SAFE_DELETE(_scheduler);
+}
 
 void Enemy::setState(EnemyState state)
 {
@@ -23,11 +31,9 @@ void Enemy::setState(EnemyState state)
 	switch (state)
 	{
 	case EnemyState::SpawnAction:
-		x = random(0, SCREEN_WIDTH - 35);
-		_spawnBigX = x > _position.x;
-
-		_sprite->setPosition(Vector2(x, SCREEN_HEIGHT + 35));
+		_sprite->setPosition(Vector2(random(0, SCREEN_WIDTH - 35), SCREEN_HEIGHT + 35));
 		_sprite->setActive(true);
+		_scheduler->addSchedule(scheduleOnce(Enemy::nextAction, 0.7f));
 		return;
 	case EnemyState::Idle:
 		_sprite->setPosition(_position);
@@ -61,25 +67,14 @@ void Enemy::idleAction(Timer& timer)
 	}
 }
 
+void Enemy::nextAction(float dt)
+{
+	setState(EnemyState::Idle);
+}
+
 void Enemy::spawnAction(Timer& timer)
 {
 	Vector2 position = _sprite->getPosition();
-	if (_spawnBigX)
-	{
-		if (position.x <= _position.x &&
-			position.y <= _position.y)
-		{
-			setState(EnemyState::Idle);
-		}
-	}
-	else
-	{
-		if (position.x >= _position.x &&
-			position.y <= _position.y)
-		{
-			setState(EnemyState::Idle);
-		}
-	}
 	position.x = lerp(position.x, _position.x, 7.0f * timer.getDeltaTime());
 	position.y = lerp(position.y, _position.y, 7.0f * timer.getDeltaTime());
 	_sprite->setPosition(position);
@@ -87,15 +82,19 @@ void Enemy::spawnAction(Timer& timer)
 
 void Enemy::update(Timer& timer)
 {
+	_rect.SetRect(
+		_sprite->getPosition().x, _sprite->getPosition().y
+		, 35.0f, 35.0f);
+	_scheduler->update(timer.getDeltaTime());
 	switch (_state)
 	{
 	case EnemyState::SpawnAction:
 		spawnAction(timer);
-		break;
+		return;
 	case EnemyState::Idle:
 		idleAction(timer);
-		break;
+		return;
 	default:
-		break;
+		return;
 	}
 }

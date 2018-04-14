@@ -2,6 +2,17 @@
 #include "Resources.h"
 #include "../Config.h"
 
+GameScene::GameScene()
+{	}
+
+GameScene::~GameScene()
+{
+	for (int i = 0; i < EnemyPoolSize; ++i)
+	{
+		SAFE_DELETE(enemy[i]);
+	}
+}
+
 void GameScene::init()
 {
 	player = Sprite::create(ResPlayer);
@@ -29,7 +40,6 @@ void GameScene::init()
 		{
 			direction = Direction::Left;
 		}
-
 		position.x = (SCREEN_WIDTH / 2) - (35 * 4);
 		position.y -= 50;
 	}
@@ -37,7 +47,7 @@ void GameScene::init()
 
 void GameScene::update(Timer& timer)
 {
-	for (int i = 0; i < 28; ++i)
+	for (int i = 0; i < EnemyPoolSize; ++i)
 	{
 		enemy[i]->update(timer);
 	}
@@ -65,7 +75,7 @@ void GameScene::update(Timer& timer)
 
 	if (Input::isKeyState(KeyCode::Space))
 	{
-		for (int i = 0; i < 28; ++i)
+		for (int i = 0; i < EnemyPoolSize; ++i)
 		{
 			if (enemy[i]->getState() == EnemyState::Die)
 			{

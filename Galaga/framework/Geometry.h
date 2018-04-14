@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Rule.h"
+#include "Vector2.h"
 
 class Size final
 {
@@ -24,5 +25,23 @@ public:
 	static const Size zero;
 	static const Size one;
 
+};
+
+class Rect final
+{
+public:
+	Vector2 origin;
+	Size size;
+
+	Rect();
+	Rect(const float x, const float y, const float w, const float h);
+	Rect(const Vector2& origin, const Size& size);
+	Rect(const Rect& rect);
+	Rect(const Rect&& rect);
+	~Rect();
+
+	Rect& operator=(const Rect& rect);
+
+	void SetRect(float x, float y, float w, float h);
 
 };

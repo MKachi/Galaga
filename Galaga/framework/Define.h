@@ -2,8 +2,6 @@
 
 #define CREATE_SCENE(_SCENE_) \
 public: \
-_SCENE_(){} \
-virtual ~_SCENE_(){} \
 void init() override; \
 void update(Timer& timer) override
 

@@ -14,4 +14,8 @@ private:
 	Sprite* player;
 	Enemy* enemy[EnemyPoolSize];
 
+public:
+	GameScene();
+	virtual ~GameScene();
+
 };
