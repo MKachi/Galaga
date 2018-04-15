@@ -40,6 +40,7 @@ void Enemy::setState(EnemyState state)
 		_sprite->setPosition(_position);
 		return;
 	case EnemyState::Die:
+		_sprite->setActive(false);
 		_scheduler->addSchedule(scheduleOnce(Enemy::respawn, 2.0f));
 		return;
 	default:
@@ -89,10 +90,7 @@ void Enemy::spawnAction(Timer& timer)
 
 void Enemy::update(Timer& timer)
 {
-	if (_sprite->isActive())
-	{
-		_scheduler->update(timer.getDeltaTime());
-	}
+	_scheduler->update(timer.getDeltaTime());
 
 	switch (_state)
 	{
@@ -111,5 +109,5 @@ void Enemy::update(Timer& timer)
 	}
 	_rect.SetRect(
 		_sprite->getPosition().x, _sprite->getPosition().y
-		, _sprite->getPosition().x + 35.0f, _sprite->getPosition().y + 35.0f);
+		, 35.0f, 35.0f);
 }

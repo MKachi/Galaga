@@ -31,7 +31,7 @@ void Bullet::update(Timer& timer)
 
 	_rect.SetRect(
 		_sprite->getPosition().x, _sprite->getPosition().y
-		, _sprite->getPosition().x + 3.0f, _sprite->getPosition().y + 20.0f);
+		, 3.0f, 20.0f);
 
 	_sprite->setPosition(Vector2(
 		_sprite->getPosition().x,

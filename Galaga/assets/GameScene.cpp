@@ -139,7 +139,7 @@ void GameScene::physicsUpdate()
 		{
 			for (int j = 0; j < EnemyPoolSize; ++j)
 			{
-				if (enemy[j]->getState() != EnemyState::Die)
+				if (enemy[j]->getState() == EnemyState::Idle)
 				{
 					Rect enemyRect = enemy[j]->getRect();
 					if (enemyRect.intersectRect(bullet[i]->getRect()))

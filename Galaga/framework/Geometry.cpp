@@ -96,10 +96,30 @@ void Rect::SetRect(float x, float y, float w, float h)
 	size.height = h;
 }
 
-bool Rect::intersectRect(const Rect& rect)
+float Rect::getMinX()
 {
-	return !(origin.x >= size.width &&
-		origin.y >= size.height &&
-		size.width <= origin.x &&
-		size.height <= origin.y);
+	return origin.x;
+}
+
+float Rect::getMaxX()
+{
+	return origin.x + size.width;
+}
+
+float Rect::getMinY()
+{
+	return origin.y;
+}
+
+float Rect::getMaxY()
+{
+	return origin.y + size.height;
+}
+
+bool Rect::intersectRect(Rect& rect)
+{
+	return !(	  getMaxX() < rect.getMinX() ||
+			 rect.getMaxX() <	   getMinX() ||
+				  getMaxY() < rect.getMinY() ||
+			 rect.getMaxY() <	   getMinY());
 }

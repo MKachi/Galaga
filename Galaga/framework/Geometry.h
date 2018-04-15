@@ -43,6 +43,13 @@ public:
 	Rect& operator=(const Rect& rect);
 
 	void SetRect(float x, float y, float w, float h);
-	bool intersectRect(const Rect& rect);
+
+	float getMinX();
+	float getMaxX();
+
+	float getMinY();
+	float getMaxY();
+
+	bool intersectRect(Rect& rect);
 
 };
