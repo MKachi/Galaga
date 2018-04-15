@@ -56,7 +56,9 @@ void Scheduler::removeSchedule(const string& key)
 	
 	if (iter != _schedules.end())
 	{
+		Schedule* target = (*iter);
 		_schedules.erase(iter);
+		SAFE_DELETE(target);
 	}
 }
 

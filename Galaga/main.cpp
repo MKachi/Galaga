@@ -12,11 +12,23 @@
 
 SceneManager* manager = nullptr;
 Timer timer;
+GLint menuID = 0;
+
+void menuEvents(int value)
+{
+	if (value == 0)
+	{
+		exit(0);
+	}
+}
 
 void init()
 {
 	manager = SceneManager::getInstance();
 	manager->pushScene(new START_SCENE());
+	GLint menuID = glutCreateMenu(menuEvents);
+	glutAddMenuEntry("Á¾·á", 0);
+	glutAttachMenu(GLUT_RIGHT_BUTTON);
 
     glEnable(GL_DOUBLEBUFFER);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -112,12 +124,17 @@ void keyUp(unsigned char key, int x, int y)
     }
 }
 
+void destroy()
+{
+	SceneManager::destroy();
+	CacheManager::destroy();
+}
 
 int main(int argc, char** argv)
 {
 #if defined(_WINDOWS) & defined(_DEBUG)
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-//	_CrtSetBreakAlloc(241);
+	//_CrtSetBreakAlloc(940);
 #endif
 
     glutInit(&argc, argv);
@@ -125,6 +142,7 @@ int main(int argc, char** argv)
     glutInitWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT);
     glutCreateWindow(TITLE_NAME);
 
+	atexit(destroy);
     Input::init();
     
 	Resources resources;
@@ -146,9 +164,6 @@ int main(int argc, char** argv)
 	update(1);
 	postSync(1);
 	glutMainLoop();
-
-	SceneManager::destroy();
-	CacheManager::destroy();
     
     return 0;
 }

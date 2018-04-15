@@ -8,9 +8,15 @@ GameScene::GameScene()
 
 GameScene::~GameScene()
 {
+	SAFE_DELETE(_scheduler);
 	for (int i = 0; i < EnemyPoolSize; ++i)
 	{
 		SAFE_DELETE(enemy[i]);
+	}
+
+	for (int i = 0; i < BulletSize; ++i)
+	{
+		SAFE_DELETE(bullet[i]);
 	}
 }
 
