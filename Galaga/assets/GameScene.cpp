@@ -54,21 +54,6 @@ void GameScene::init()
 
 	_scheduler = new Scheduler();
 	_scheduler->addSchedule(scheduleOnce(GameScene::firstSpawn, 3.0f));
-
-	Rect rect1;
-	rect1.SetRect(0, 0, 300, 300);
-
-	Rect rect2;
-	rect2.SetRect(400, 400, 300, 300);
-
-	if (rect1.intersectRect(rect2))
-	{
-		printf("True\n");
-	}
-	else
-	{
-		printf("False\n");
-	}
 }
 
 void GameScene::update(Timer& timer)
